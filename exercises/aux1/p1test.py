@@ -1,3 +1,4 @@
+# Ejercicio para repasar clases en Python. Si la encapsulación fuera una persona, tendría  mucha pena.
 from aux1.p1 import Pokemon
 
 

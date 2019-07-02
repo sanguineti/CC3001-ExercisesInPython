@@ -1,5 +1,3 @@
-# Ejercicio para repasar clases en Python. Si la encapsulación fuera una persona, tendría  mucha pena.
-
 import math
 
 
