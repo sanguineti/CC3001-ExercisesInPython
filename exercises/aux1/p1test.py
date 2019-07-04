@@ -1,4 +1,6 @@
-# Ejercicio para repasar clases en Python. Si la encapsulación fuera una persona, tendría  mucha pena.
+__author__ = "F. Giovanni Sanguineti"
+__email__ = "franco.sanguineti@ug.uchile.cl"
+
 from aux1.p1 import Pokemon
 
 

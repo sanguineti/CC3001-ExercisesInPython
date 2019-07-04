@@ -1,3 +1,6 @@
+__author__ = "F. Giovanni Sanguineti"
+__email__ = "franco.sanguineti@ug.uchile.cl"
+
 import numpy as np
 
 
