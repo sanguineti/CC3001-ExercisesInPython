@@ -27,16 +27,22 @@ reshaped_Exercise_c_array = array_c_inverted.reshape(6, 6)
 print(reshaped_Exercise_c_array)
 print("Size of Inverted Exercise c array: ", reshaped_Exercise_c_array.shape, "\n")
 
+# Exercise d
+
 array_d = np.empty(5, dtype='U20')
 array_d[0] = "Hola amig@"
 array_d[4] = "Adiós amig@"
 print(array_d, "\n")
+
+# Exercise e
 
 array_e = np.empty(15, dtype=float)
 array_e[0] = 3.3
 for x in range(1, 15):
     array_e[x] = array_e[x - 1] + 0.3
 print(array_e, "\n")
+
+# Exercise f
 
 charizard = Pokemon("Charizard", 47, 6)
 gyarados = Pokemon("Gyarados", 113, 130)
