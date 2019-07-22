@@ -4,7 +4,7 @@ import numpy as np
 def subarreglo_maximo(arreglo, i, j):
     # caso base, si es que el arreglo es de largo 1, el máximo es el elemento solo.
     if i == j:
-        return arreglo[0]
+        return arreglo[i]
     # calcular recursivamente el máximo de las 2 mitades.
     m = (j + i) // 2
     suma_max_izq = subarreglo_maximo(arreglo, i, m)
