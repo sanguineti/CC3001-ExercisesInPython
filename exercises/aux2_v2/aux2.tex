@@ -1,0 +1,78 @@
+\documentclass[dcc, sol]{fcfmcourse}
+\usepackage[utf8x]{inputenc}
+\usepackage{epstopdf, amsmath, amsfonts, setspace, listings, hyperref, color, listings}
+
+%% para simular consola: \begin{codebox}
+\newenvironment{codebox}{\small \ttfamily \obeylines \begingroup \setstretch{-2.4}} {\endgroup}
+
+%% para poner código: 
+% \lstinputlisting{file.java} o 
+% \begin{lstlisting}
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{porange}{rgb}{0.9,0.5,0}
+\lstset{
+  language=Java,
+  numbers=left,
+  showstringspaces=false,
+  commentstyle=\color{porange},
+  keywordstyle=\color{pblue},
+  stringstyle=\color{pgreen},
+  tabsize=2,
+  basicstyle=\footnotesize,
+}
+
+\title[2]{Programas iterativos con invariante}
+\course[CC3001]{Algoritmos y Estructuras de Datos}
+
+\professor{Jérémy Barbay}
+\professor{Patricio Poblete, Nelson Baloian}
+\assistant{Felipe Lizama, F. Giovanni Sanguineti,}
+\assistant{Matías Ramírez, Sven Reisenegger. }
+
+
+\begin{document}
+\maketitle
+
+\begin{problems}
+\problem \textbf{Subarreglo de suma máxima}
+
+Dado un arreglo con enteros positivos y negativos, se quiere conseguir el subarreglo que contiene la suma máxima posible. Un subarreglo es cualquier subconjunto consecutivo del arreglo. 
+
+\begin{enumerate}
+    \item Programe una solución que resuelva el problema en tiempo cúbico.
+    \item ¿Puede ser más eficiente la solución? Intente programar una solución que resuelva el problema en tiempo cuadrático.
+    \item Sea aún más eficiente: programe una solución que resuelva el problema en tiempo lineal. \textit{Hint: La clave está en los números que son negativos}
+\end{enumerate}
+
+\problem \textbf{Problema de partición}
+
+El algoritmo de ordenamiento r\'apido (quicksort en ingl\'es) fue creado por el cient\'ifico brit\'anico en computaci\'on C. A. R. Hoare. La magia de este algoritmo está en el uso de la función \texttt{partición}, la que dado un arreglo y un elemento dentro del arreglo llamado pivote:
+\begin{enumerate}[1.]
+   \item Seleccionar un pivote (puede elegirse cualquiera, existen distintas técnicas).  
+   \item Situar el pivote en la posición que ocuparía dentro del arreglo si este  estuviese ordenado.
+    \item Sitúa todos los elementos menores o iguales que el pivote a la izquierda,  y todos los elementos mayores que el pivote a la derecha de este.
+\end{enumerate}
+ Existen varios algoritmos para particionar un arreglo. Aquí tenemos dos de los más conocidos:
+ 
+ 
+ 
+ \textbf{Partición de Hoare}  Si partimos con el arreglo \texttt{\{3, 7, 2, 4, 8, 6\}}, el arreglo debería quedar ordenado como \texttt{\{2, 3, 7, 4, 8, 6\}}.
+
+ 
+ \textbf{Partición de Lomuto} Si partimos con el arreglo \texttt{\{3, 7, 2, 4, 8, 6\}}, el arreglo debería quedar ordenado como \texttt{\{3, 2, 4, 6, 8, 7\}}.
+
+
+\begin{enumerate}
+    \item Implemente el algoritmo de la partición de Hoare en la función
+    
+    \texttt{particion\_hoare(x, ip, iu)}. Especifique el invariante.
+    \item Implemente el algoritmo de la partición de Lomuto en la función
+    
+    \texttt{particion\_lomuto(x, ip, iu)}. Especifique el invariante.
+\end{enumerate}
+
+Los parámetros \texttt{ip} y \texttt{iu} son un entero que representa la posición inicial y final del arreglo que se quiere particionar. El parámetro \texttt{x} es el arreglo de NumPy a particionar. En ambos casos las funciones devuelven un entero con la posición del pivote.
+
+\end{problems}
+\end{document}
