@@ -14,7 +14,7 @@ def segmento_maximo(arreglo):
         # invariante: se conoce el segmento de suma máxima que comienza en el i actual y termina en un indice
         # anterior a j
 
-        for j in range(len(arreglo)):
+        for j in range(i, len(arreglo)):
             suma = 0
             # para cada iteración se suma el rango completo
             for k in range(i, j + 1):

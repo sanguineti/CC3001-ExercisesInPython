@@ -1,6 +1,6 @@
 import numpy as np
 def particion_hoare(arreglo, ini, fin):
-    pivote = arreglo[0]
+    pivote = arreglo[ini]
     i = ini
     j = fin + 1
     while True:
@@ -14,7 +14,7 @@ def particion_hoare(arreglo, ini, fin):
             if not arreglo[j] > pivote:
                 break
         if i >= j:
-            arreglo[0], arreglo[j] = arreglo[j], arreglo[0]
+            arreglo[ini], arreglo[j] = arreglo[j], arreglo[0]
             # print(arreglo)
             return j
         
