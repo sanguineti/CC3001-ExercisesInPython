@@ -51,9 +51,9 @@ class ListaCircular:
                 self.size += 1
                 return
         
-        nodo_nuevo = NodoLista(v, primero)
-        ultimo_antiguo = self.primero
-        for x in range(1, self.size):
-            ultimo_antiguo = ultimo_antiguo.sig
-            ultimo_antiguo.sig = nodo_nuevo
-        self.size += 1
+            nodo_nuevo = NodoLista(v, self.primero)
+            ultimo_antiguo = self.primero
+            for x in range(1, self.size):
+                ultimo_antiguo = ultimo_antiguo.sig
+                ultimo_antiguo.sig = nodo_nuevo
+            self.size += 1
