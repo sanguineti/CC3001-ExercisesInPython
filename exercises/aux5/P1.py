@@ -29,4 +29,17 @@ class ListaCircular:
                 return x + 1
             buscador = buscador.sig
         return -1      
-        
+    def eliminar(self, i):
+        if self.size==0:
+            return None
+        buscador = self.primero
+        if (i == 1):
+            for x in range(1, self.size):
+                buscador = buscador.sig
+        else:
+            for x in range(1, i - 1):
+                buscador = buscador.sig
+        print("Eliminado: ", buscador.sig.val)
+        buscador.sig = buscador.sig.sig
+        self.size -= 1
+        return buscador.sig
