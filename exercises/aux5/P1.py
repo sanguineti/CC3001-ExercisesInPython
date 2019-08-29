@@ -1,5 +1,5 @@
 class NodoLista:
-    def __init__(self, val=None, sig=None):
+    def __init__(self, val, sig=None):
         self.val = val
         self.sig = sig
     def __repr__(self):
@@ -9,7 +9,6 @@ class ListaCircular:
     def __init__(self):
         self.primero = None
         self.size = 0
-
 
     def largo(self):
         return self.size
@@ -25,8 +24,8 @@ class ListaCircular:
     def existe(self, num):
         buscador = self.primero
         for x in range(self.size):
-            if buscador.val == num:
-                return x + 1
+            if int(buscador.val) == num:
+                return x
             buscador = buscador.sig
         return -1      
     def eliminar(self, i):
@@ -44,16 +43,24 @@ class ListaCircular:
         self.size -= 1
         return buscador.sig
 
-        def agregar(self, v):
-            if self.size == 0:
-                self.primero = NodoLista(v)
-                self.primero.sig = self.primero #Lista Circular
-                self.size += 1
-                return
-        
-            nodo_nuevo = NodoLista(v, self.primero)
-            ultimo_antiguo = self.primero
-            for x in range(1, self.size):
-                ultimo_antiguo = ultimo_antiguo.sig
-                ultimo_antiguo.sig = nodo_nuevo
+    def agregar(self, v):
+        if self.size == 0:
+            self.primero = NodoLista(v)
+            self.primero.sig = self.primero #Lista Circular
             self.size += 1
+            return
+    
+        nodo_nuevo = NodoLista(v, self.primero)
+        ultimo_antiguo = self.primero
+        for x in range(1,self.size):
+            ultimo_antiguo = ultimo_antiguo.sig
+        ultimo_antiguo.sig = nodo_nuevo
+        self.size += 1
+
+
+lista = ListaCircular()
+lista.agregar(5)
+lista.agregar(3)
+lista.agregar(90)
+lista.agregar(182937129837)
+print(lista.obtener(1))
