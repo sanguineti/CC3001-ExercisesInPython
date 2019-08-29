@@ -17,6 +17,7 @@ def generar_lista(cant):
         lista.agregar(i)
     return lista
 
+# Main, desde aquí corre el programa
 if __name__ == "__main__":
     lista = ListaCircular()
     for k in range(1, 11): # De uno a diez
