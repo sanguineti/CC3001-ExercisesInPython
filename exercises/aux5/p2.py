@@ -3,9 +3,11 @@ from P1 import ListaCircular
 
 def josephus(clista, k):
     nodo = clista.primero
+    i = 0
     while clista.largo() > 1:
         # El siguiente al eliminado (recordar que cuenta desde 1)
-        nodo = clista.eliminar(1+k)
+        nodo = clista.eliminar(1 + k + i)
+        i += 1
     return nodo.val
 
 
@@ -15,3 +17,9 @@ def generar_lista(cant):
     for i in range(1, cant + 1):
         lista.agregar(i)
     return lista
+
+if __name__ == "__main__":
+    lista = ListaCircular()
+    for k in range(1, 11): # De uno a diez
+        lista = generar_lista(6)
+        print("Último niño en la lista para k = ", k, ": ", josephus(lista, k))
