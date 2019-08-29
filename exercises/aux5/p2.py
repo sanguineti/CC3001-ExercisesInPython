@@ -3,11 +3,10 @@ from P1 import ListaCircular
 
 def josephus(clista, k):
     nodo = clista.primero
-    i = 0
     while clista.largo() > 1:
         # El siguiente al eliminado (recordar que cuenta desde 1)
-        nodo = clista.eliminar(1 + k + i)
-        i += 1
+        nodo = clista.eliminar(k+1)
+        clista.primero = nodo
     return nodo.val
 
 
