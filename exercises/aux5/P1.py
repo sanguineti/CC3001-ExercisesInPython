@@ -17,7 +17,7 @@ class ListaCircular:
         if self.size==0:
             return -1
         buscador = self.primero
-        for x in range(i):
+        for x in range(1, i):
             buscador = buscador.sig
         return buscador.val
     
@@ -56,11 +56,3 @@ class ListaCircular:
             ultimo_antiguo = ultimo_antiguo.sig
         ultimo_antiguo.sig = nodo_nuevo
         self.size += 1
-
-
-lista = ListaCircular()
-lista.agregar(5)
-lista.agregar(3)
-lista.agregar(90)
-lista.agregar(182937129837)
-print(lista.obtener(1))
