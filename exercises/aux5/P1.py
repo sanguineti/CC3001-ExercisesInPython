@@ -34,7 +34,7 @@ class ListaCircular:
             buscador = buscador.sig
         return -1
 
-    # Elimina el i-ésimo eleento y retorna la referencia al siguiente nodo del eliminado
+    # Elimina el i-ésimo elemento y retorna la referencia al siguiente nodo del eliminado
     def eliminar(self, i):
         if self.size == 0:
             return None
