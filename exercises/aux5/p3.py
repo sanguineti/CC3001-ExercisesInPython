@@ -21,13 +21,13 @@ class ArbolBinario:
     def maximo(arbol):
         if arbol == None:
             return MIN_VALUE
-        return max(arbol.valor, max(ArbolBinario.maximo(arbol.izq), ArbolBinario.maximo(arbol.der)))
+        return max(arbol.val, max(ArbolBinario.maximo(arbol.izq), ArbolBinario.maximo(arbol.der)))
 
     @staticmethod
     def minimo(arbol):
         if arbol == None:
             return sys.maxsize
-        return min(arbol.valor, min(ArbolBinario.minimo(arbol.izq), ArbolBinario.minimo(arbol.der)))
+        return min(arbol.val, min(ArbolBinario.minimo(arbol.izq), ArbolBinario.minimo(arbol.der)))
 
     @staticmethod
     def suma(arbol):
@@ -70,11 +70,20 @@ no_binario = ArbolBinario(5,
 # Casos de Prueba
 
 # Es Binario
-print(ArbolBinario.es_arbol_binario(binario))
-print(ArbolBinario.es_arbol_binario(no_binario))
-print(ArbolBinario.es_arbol_binario(None))
+print("Es binario el arbol binario? ", ArbolBinario.es_arbol_binario(binario))
+print("Es binario el arbol no binario? ", ArbolBinario.es_arbol_binario(no_binario))
+print("Es binario el arbol nulo? ", ArbolBinario.es_arbol_binario(None))
 
 # Número de nodos
 print("Número de nodos Ejemplo binario: ", ArbolBinario.numero_nodos(binario))
 print("Número de nodos Ejemplo no binario: ", ArbolBinario.numero_nodos(no_binario))
 print("Número de nodos Ejemplo nulo: ", ArbolBinario.numero_nodos(None))
+
+# Máximo y mínimo
+
+print("Máximo valor del árbol binario: ", ArbolBinario.maximo(binario))
+print("Mínimo valor del árbol binario: ", ArbolBinario.minimo(binario))
+
+print("Máximo valor del árbol no binario: ", ArbolBinario.maximo(no_binario))
+print("Mínimo valor del árbol no binario: ", ArbolBinario.minimo(no_binario))
+
