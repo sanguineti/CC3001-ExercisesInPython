@@ -13,48 +13,56 @@ class NodoArbolBinario:
 
 
 class ArbolBinario:
-    def __init__(self):
-        self.raiz = None
+    def __init__(self, raiz=None):
+        self.raiz = raiz
 
-    def numero_nodos(self, arbol):
+    @staticmethod
+    def numero_nodos(arbol):
         if arbol.raiz == None:
             return 0
-        return 1 + self.numero_nodos(arbol.der) + self.numero_nodos(arbol.izq)
+        return 1 + ArbolBinario.numero_nodos(arbol.der) + ArbolBinario.numero_nodos(arbol.izq)
 
-    def maximo(self, arbol):
+    @staticmethod
+    def maximo(arbol):
         if arbol.raiz == None:
             return MIN_VALUE
-        return max(arbol.valor, max(self.maximo(arbol.izq), self.maximo(arbol.der)))
+        return max(arbol.valor, max(ArbolBinario.maximo(arbol.izq), ArbolBinario.maximo(arbol.der)))
 
-    def minimo(self, arbol):
+    @staticmethod
+    def minimo(arbol):
         if arbol.raiz == None:
             return sys.maxsize
-        return min(arbol.valor, min(self.minimo(arbol.izq), self.minimo(arbol.der)))
+        return min(arbol.valor, min(ArbolBinario.minimo(arbol.izq), ArbolBinario.minimo(arbol.der)))
 
-    def suma(self, arbol):
+    @staticmethod
+    def suma(arbol):
         if arbol.raiz == None:
             return 0
-        return arbol.val + self.suma(arbol.izq) + self.suma(arbol.der)
+        return arbol.val + ArbolBinario.suma(arbol.izq) + ArbolBinario.suma(arbol.der)
 
-    def pisos(self, arbol):
+    @staticmethod
+    def pisos(arbol):
         if arbol.raiz == None:
             return 0
-        return 1 + max(self.pisos(arbol.izq), self.pisos(arbol.der))
+        return 1 + max(ArbolBinario.pisos(arbol.izq), ArbolBinario.pisos(arbol.der))
 
-    def es_arbol_binario(self, arbol, min=MIN_VALUE, max=MAX_VALUE):
+    @staticmethod
+    def es_arbol_binario(arbol, min=MIN_VALUE, max=MAX_VALUE):
         if arbol.raiz == None:
             return True
-        if arbol.valor < min or arbol.valor > max:
+        if arbol.raiz.val < min or arbol.raiz.val > max:
             return False
-        return self.es_arbol_binario(arbol.raiz.izq, min, arbol.valor) and self.es_arbol_binario(arbol.raiz.der, arbol.raiz.val, MAX_VALUE)
+        return ArbolBinario.es_arbol_binario(arbol.raiz.izq, min, arbol.raiz.val) and ArbolBinario.es_arbol_binario(arbol.raiz.der, arbol.raiz.val, MAX_VALUE)
+
 
 binario = NodoArbolBinario(5,
-        NodoArbolBinario(3,
-                NodoArbolBinario(2),
-                NodoArbolBinario(4)),
-        NodoArbolBinario(7,
-                NodoArbolBinario(6),
-                NodoArbolBinario(8,
-                    None,
-                    NodoArbolBinario(9))))
-
+                           NodoArbolBinario(3,
+                                            NodoArbolBinario(2),
+                                            NodoArbolBinario(4)),
+                           NodoArbolBinario(7,
+                                            NodoArbolBinario(6),
+                                            NodoArbolBinario(8,
+                                                             None,
+                                                             NodoArbolBinario(9))))
+arbol_binario = ArbolBinario(binario)
+print(ArbolBinario.es_arbol_binario(arbol_binario))
