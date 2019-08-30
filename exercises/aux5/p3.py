@@ -61,22 +61,24 @@ binario = ArbolBinario(5,
                                                  ArbolBinario(9))))
 no_binario = ArbolBinario(5,
                           ArbolBinario(3,
-                                           ArbolBinario(2),
-                                           ArbolBinario(16)),
+                                       ArbolBinario(2),
+                                       ArbolBinario(16)),
                           ArbolBinario(8,
-                                           ArbolBinario(7),
-                                           ArbolBinario(9)))
+                                       ArbolBinario(7),
+                                       ArbolBinario(9)))
 
 # Casos de Prueba
 
 # Es Binario
 print("Es binario el arbol binario? ", ArbolBinario.es_arbol_binario(binario))
-print("Es binario el arbol no binario? ", ArbolBinario.es_arbol_binario(no_binario))
+print("Es binario el arbol no binario? ",
+      ArbolBinario.es_arbol_binario(no_binario))
 print("Es binario el arbol nulo? ", ArbolBinario.es_arbol_binario(None))
 
 # Número de nodos
 print("Número de nodos Ejemplo binario: ", ArbolBinario.numero_nodos(binario))
-print("Número de nodos Ejemplo no binario: ", ArbolBinario.numero_nodos(no_binario))
+print("Número de nodos Ejemplo no binario: ",
+      ArbolBinario.numero_nodos(no_binario))
 print("Número de nodos Ejemplo nulo: ", ArbolBinario.numero_nodos(None))
 
 # Máximo y mínimo

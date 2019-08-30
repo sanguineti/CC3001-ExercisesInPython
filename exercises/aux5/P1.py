@@ -50,23 +50,25 @@ class ListaCircular:
                 buscador = buscador.sig
         # Aquí estamos en el nodo anterior al que queremos eliminar, ahora lo eliminamos.
         print("Eliminado: ", buscador.sig.val)
-        buscador.sig = buscador.sig.sig # Cambio la referencia
+        buscador.sig = buscador.sig.sig  # Cambio la referencia
         self.size -= 1
-        return buscador.sig # Retornar el siguiente al eliminado
+        return buscador.sig  # Retornar el siguiente al eliminado
 
     def agregar(self, v):
-        if self.size == 0: # No elementos
+        if self.size == 0:  # No elementos
             self.primero = NodoLista(v)
             self.primero.sig = self.primero  # Lista Circular
             self.size += 1
             return
         # Si existen elementos
-        nodo_nuevo = NodoLista(v, self.primero) #Como lo inserto al final, apunta al primero
+        # Como lo inserto al final, apunta al primero
+        nodo_nuevo = NodoLista(v, self.primero)
         ultimo_antiguo = self.primero
         for x in range(1, self.size):
             ultimo_antiguo = ultimo_antiguo.sig
-        ultimo_antiguo.sig = nodo_nuevo # Ahora apunta al nuevo
+        ultimo_antiguo.sig = nodo_nuevo  # Ahora apunta al nuevo
         self.size += 1
+
 
 if __name__ == "__main__":
     a = ListaCircular()
