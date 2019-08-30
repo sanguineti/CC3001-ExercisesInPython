@@ -87,3 +87,8 @@ print("Mínimo valor del árbol binario: ", ArbolBinario.minimo(binario))
 print("Máximo valor del árbol no binario: ", ArbolBinario.maximo(no_binario))
 print("Mínimo valor del árbol no binario: ", ArbolBinario.minimo(no_binario))
 
+# Número de pisos
+
+print("Número de pisos del árbol binario: ", ArbolBinario.pisos(binario))
+print("Número de pisos del árbol no binario: ", ArbolBinario.pisos(no_binario))
+print("Número de pisos del árbol Nulo: ", ArbolBinario.pisos(None))
