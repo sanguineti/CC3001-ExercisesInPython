@@ -102,3 +102,4 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+exercises/aux5/checklist.md
