@@ -67,3 +67,11 @@ class ListaCircular:
             ultimo_antiguo = ultimo_antiguo.sig
         ultimo_antiguo.sig = nodo_nuevo # Ahora apunta al nuevo
         self.size += 1
+
+if __name__ == "__main__":
+    a = ListaCircular()
+    a.agregar(5)
+    a.agregar(7)
+    a.agregar(9)
+    a.eliminar(3)
+    print("Hola")

@@ -92,3 +92,13 @@ print("Mínimo valor del árbol no binario: ", ArbolBinario.minimo(no_binario))
 print("Número de pisos del árbol binario: ", ArbolBinario.pisos(binario))
 print("Número de pisos del árbol no binario: ", ArbolBinario.pisos(no_binario))
 print("Número de pisos del árbol Nulo: ", ArbolBinario.pisos(None))
+
+
+
+a = ArbolBinario(1, ArbolBinario(3), ArbolBinario(5))
+
+b = a
+
+b.izq = ArbolBinario(5555555555)
+
+print(a.izq.val)
