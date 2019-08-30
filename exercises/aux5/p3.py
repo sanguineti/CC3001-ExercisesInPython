@@ -25,7 +25,7 @@ class ArbolBinario:
         if arbol.raiz == None:
             return MIN_VALUE
         return max(arbol.valor, max(self.maximo(arbol.izq), self.maximo(arbol.der)))
-    
+
     def minimo(self, arbol):
         if arbol.raiz == None:
             return sys.maxsize
@@ -46,5 +46,15 @@ class ArbolBinario:
             return True
         if arbol.valor < min or arbol.valor > max:
             return False
-        return self.es_arbol_binario(arbol.raiz.izq, min, arbol.valor) and 
-        self.es_arbol_binario(arbol.raiz.der, arbol.raiz.val, MAX_VALUE)
+        return self.es_arbol_binario(arbol.raiz.izq, min, arbol.valor) and self.es_arbol_binario(arbol.raiz.der, arbol.raiz.val, MAX_VALUE)
+
+binario = NodoArbolBinario(5,
+        NodoArbolBinario(3,
+                NodoArbolBinario(2),
+                NodoArbolBinario(4)),
+        NodoArbolBinario(7,
+                NodoArbolBinario(6),
+                NodoArbolBinario(8,
+                    None,
+                    NodoArbolBinario(9))))
+
