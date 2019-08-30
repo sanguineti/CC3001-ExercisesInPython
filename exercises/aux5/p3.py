@@ -68,6 +68,13 @@ no_binario = ArbolBinario(5,
                                            ArbolBinario(9)))
 
 # Casos de Prueba
+
+# Es Binario
 print(ArbolBinario.es_arbol_binario(binario))
 print(ArbolBinario.es_arbol_binario(no_binario))
 print(ArbolBinario.es_arbol_binario(None))
+
+# Número de nodos
+print("Número de nodos Ejemplo binario: ", ArbolBinario.numero_nodos(binario))
+print("Número de nodos Ejemplo no binario: ", ArbolBinario.numero_nodos(no_binario))
+print("Número de nodos Ejemplo nulo: ", ArbolBinario.numero_nodos(None))
