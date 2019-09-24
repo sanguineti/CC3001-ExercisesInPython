@@ -10,7 +10,7 @@ def costo_minimo(matriz):
     for i in range(0, n):
         for j in range(1, n):
             opti = matriz[i][j]
-            for k in range(i, j - i + 1):
+            for k in range(i + 1, j - i + 1):
                 opti = min(matriz[i][k] + matriz[k][j], opti)
             matriz[i][j] = opti
     return matriz
