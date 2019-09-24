@@ -14,8 +14,3 @@ def costo_minimo(matriz):
                 opti = min(matriz[i][k] + matriz[k][j], opti)
             matriz[i][j] = opti
     return matriz
-
-if __name__=="__main__":
-    test = [[0, 6, 9, 7], [0, 0, 2, 15], [0, 0, 0, 3], [0, 0, 0, 0]]
-    a = costo_minimo(test)
-    print(a)
