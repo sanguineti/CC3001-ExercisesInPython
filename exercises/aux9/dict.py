@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 MIN_VALUE = -sys.maxsize - 1
 
 def ordernar_via_diccionario(arr):
