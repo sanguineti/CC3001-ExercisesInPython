@@ -12,4 +12,5 @@ def ordernar_via_diccionario(arr):
     while diccionario.sucesor(minimo) != None:
         arreglo[i] = diccionario.sucesor(minimo)
         minimo = diccionario.sucesor(minimo)
+        i += 1
     return arreglo     
